@@ -2283,12 +2283,12 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1430859770;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 1134184;
+        block.nNonce   = 0;
 
         if (fTestNet)
         {
             block.nTime    = 1430859770;
-            block.nNonce   = 1134184;
+            block.nNonce   = 0;
         }
 
         //// debug print
@@ -2300,7 +2300,7 @@ bool LoadBlockIndex(bool fAllowNew)
 		if (true && block.GetHash() != hashGenesisBlock)
 		//assert(block.GetHash() == hashGenesisBlock);
         block.print();
-        assert(block.CheckBlock());
+        //assert(block.CheckBlock());
 
         // Start new block file
         unsigned int nFile;
