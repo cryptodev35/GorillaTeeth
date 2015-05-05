@@ -2269,7 +2269,7 @@ bool LoadBlockIndex(bool fAllowNew)
            //vMerkleTree: 4a5e1e
 
         // Genesis block
-        const char* pszTimestamp = "MMXIV PoS Launch - 01-AUG-2014 - JTn1";
+        const char* pszTimestamp = "POS experiment test for fun";
         CTransaction txNew;
         txNew.nTime = 1406851200;
         txNew.vin.resize(1);
@@ -2281,21 +2281,21 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1406851201;
+        block.nTime    = 1430859770;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 1604156441;
+        block.nNonce   = 1134184;
 
         if (fTestNet)
         {
-            block.nTime    = 1345090000;
-            block.nNonce   = 122894938;
+            block.nTime    = 1430859770;
+            block.nNonce   = 1134184;
         }
 
         //// debug print
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xd5622eb6ab2b578487ac2e935c426adcf9642643ed3490aa8fa2cf0e4c9f2fe7"));         
+        assert(block.hashMerkleRoot == uint256("0xec2faac4b936c8054ada8e6f8c7353cef03016c175c77be7837617db34830ac5"));         
         assert(block.GetHash() == hashGenesisBlock);
         block.print();
         assert(block.CheckBlock());
